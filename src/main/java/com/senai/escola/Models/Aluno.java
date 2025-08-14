@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+// deve satisfação a interface (AlunoRepository)
+
 @Entity
 public class Aluno {
 
