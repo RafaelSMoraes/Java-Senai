@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController //define que a classe vire um construtor
-@RequestMapping ("/Alunos") //sera o nosso garcom pra integrar com web
+@RequestMapping ("/{Alunos}") //sera o nosso garcom pra integrar com web
 
 public class AlunoController {
     //injecao de dependencia
@@ -27,8 +27,8 @@ public class AlunoController {
         return alunoService.salvarNovoAluno(aluno);
     }
 
-    @DeleteMapping //metodo sem retorno usando a variavel Long id
-    public void  excluiraluno(Long id){
+    @DeleteMapping ("/{id}") //metodo sem retorno usando a variavel Long id
+    public void  excluiraluno(@PathVariable Long id){
         alunoService.deletarAluno(id);
     }
 
@@ -36,4 +36,6 @@ public class AlunoController {
     public Aluno buscaAlunoPorId (@PathVariable Long id){
         return alunoService.buscarAlunoId(id);
     }
+
+
 }
